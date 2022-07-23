@@ -3,10 +3,17 @@ import { useState } from 'react';
 import MatchList from "./MatchList";
 
 // backend config
-import myConfig from './../backend/config';
+import myConfig from './../config/config';
+
+// bootstrap
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Accordion from 'react-bootstrap/Accordion';
+
 
 
 const fetchPUUID = async (summonerName) => {
+  console.log('request sent');
   const response = await fetch(`${myConfig.proxyUrl}https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}`, {
     headers: {
       'X-Riot-Token': process.env.REACT_APP_X_RIOT_TOKEN
@@ -17,7 +24,8 @@ const fetchPUUID = async (summonerName) => {
 };
 
 const fetchMatches = async (puuid) => {
-  const response = await fetch(`${myConfig.proxyUrl}https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=1`, {
+  console.log('request sent');
+  const response = await fetch(`${myConfig.proxyUrl}https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=5`, {
     headers: {
       'X-Riot-Token': process.env.REACT_APP_X_RIOT_TOKEN
     }
@@ -38,15 +46,15 @@ const SummonerName = () => {
   };
 
   return (
-    <div>
-      <button className="mt-2 btn btn-primary" onClick={clickHandler}>Search
-      </button>
-      <ul>
+    <Container>
+      <Button onClick={clickHandler}>Search
+      </Button>
+      <Accordion>
         <MatchList
           puuid={puuid}
           matches={matches} />
-      </ul>
-    </div>
+      </Accordion>
+    </Container>
   );
 
 };
