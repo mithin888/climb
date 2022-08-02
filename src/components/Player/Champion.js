@@ -1,7 +1,5 @@
 import championLibrary from "../../assets/champion.json";
 
-import Image from 'react-bootstrap/Image';
-
 const Champion = props => {
 
   const championImage = championName => {
@@ -9,7 +7,7 @@ const Champion = props => {
   };
   const champion = championLibrary.data[props.name];
   return (
-    <Image
+    <img
       src={championImage(props.name)}
       width='50px'
     />

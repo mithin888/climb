@@ -2,8 +2,6 @@ import React from "react";
 
 import runesLibrary from "../../assets/runesReforged.json";
 
-import Image from 'react-bootstrap/Image';
-
 
 const runeImage = rune => {
   return `https://ddragon.leagueoflegends.com/cdn/img/${rune.icon}`;
@@ -56,7 +54,7 @@ const Runes = props => {
     <React.Fragment>
       {primaryRuneArray.map(rune => {
         return (
-          <Image
+          <img
             key={rune.id}
             src={runeImage(rune)}
             width='25px'
@@ -65,7 +63,7 @@ const Runes = props => {
       })}
       {secondaryRuneArray.map(rune => {
         return (
-          <Image
+          <img
             key={rune.id}
             src={runeImage(rune)}
             width='25px'

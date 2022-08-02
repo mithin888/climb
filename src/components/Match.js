@@ -8,9 +8,6 @@ import Runes from './Player/Runes';
 import SummonerSpells from './Player/SummonerSpells';
 
 
-import Accordion from 'react-bootstrap/Accordion';
-
-
 
 
 const Match = props => {
@@ -41,21 +38,20 @@ const Match = props => {
 
   return (
     <React.Fragment>
-      <Accordion.Header>
-        {data && <Champion
-          id={player.championId}
-          name={player.championName}
-        />}
-        {data && <SummonerSpells
-          spell1={player.summoner1Id}
-          spell2={player.summoner2Id}
-        />}
-        {data && <Runes
-          runes={player.perks.styles}
-          primaryId={player.perks.styles[0].style}
-          secondaryId={player.perks.styles[1].style}
-        />}
-        {data && <Items
+      {data && <Champion
+        id={player.championId}
+        name={player.championName}
+      />}
+      {data && <SummonerSpells
+        spell1={player.summoner1Id}
+        spell2={player.summoner2Id}
+      />}
+      {data && <Runes
+        runes={player.perks.styles}
+        primaryId={player.perks.styles[0].style}
+        secondaryId={player.perks.styles[1].style}
+      />}
+      {/* {data && <Items
           items={[player.item0, player.item1, player.item2, player.item3, player.item4, player.item5, player.item6]}
           item0={player.item0}
           item1={player.item1}
@@ -64,19 +60,16 @@ const Match = props => {
           item4={player.item4}
           item5={player.item5}
           item6={player.item6}
-        />}
-      </Accordion.Header>
-      <Accordion.Body>
-        <div>{data && `User: ${props.puuid}`}</div>
-        <div>{data && `Game Mode: ${matchData.info.gameMode}`}</div>
-        <div>{data && `Participant 1: ${matchData.metadata.participants[0]}`}</div>
-        <div>{data && `Participant 2: ${matchData.metadata.participants[1]}`}</div>
-        <div>{data && `Participant 3: ${matchData.metadata.participants[2]}`}</div>
-        <div>{data && `Participant 4: ${matchData.metadata.participants[3]}`}</div>
-        <div>{data && `Participant 5: ${matchData.metadata.participants[4]}`}</div>
-        <div>{data && `KDA: ${player.kills} / ${player.deaths} / ${player.assists}`}</div>
+        />} */}
 
-      </Accordion.Body>
+      <div>{data && `User: ${props.puuid}`}</div>
+      <div>{data && `Game Mode: ${matchData.info.gameMode}`}</div>
+      <div>{data && `Participant 1: ${matchData.metadata.participants[0]}`}</div>
+      <div>{data && `Participant 2: ${matchData.metadata.participants[1]}`}</div>
+      <div>{data && `Participant 3: ${matchData.metadata.participants[2]}`}</div>
+      <div>{data && `Participant 4: ${matchData.metadata.participants[3]}`}</div>
+      <div>{data && `Participant 5: ${matchData.metadata.participants[4]}`}</div>
+      <div>{data && `KDA: ${player.kills} / ${player.deaths} / ${player.assists}`}</div>
     </React.Fragment>
   );
 

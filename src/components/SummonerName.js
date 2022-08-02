@@ -5,10 +5,6 @@ import MatchList from "./MatchList";
 // backend config
 import myConfig from './../config/config';
 
-// bootstrap
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion';
 
 
 
@@ -46,15 +42,15 @@ const SummonerName = () => {
   };
 
   return (
-    <Container>
-      <Button onClick={clickHandler}>Search
-      </Button>
-      <Accordion>
+    <div>
+      <button onClick={clickHandler}>Search
+      </button>
+      <div>
         <MatchList
           puuid={puuid}
           matches={matches} />
-      </Accordion>
-    </Container>
+      </div>
+    </div>
   );
 
 };

@@ -1,8 +1,6 @@
 
 import summonerSpellLibrary from "../../assets/summoner.json";
 
-import Image from 'react-bootstrap/Image';
-
 const SummonerSpells = props => {
 
   const summonerSpellImage = spell => {
@@ -23,11 +21,11 @@ const SummonerSpells = props => {
 
   return (
     <div>
-      <Image
+      <img
         src={summonerSpellImage(spell1)}
         width='25px'
       />
-      <Image
+      <img
         src={summonerSpellImage(spell2)}
         width='25px'
       />
