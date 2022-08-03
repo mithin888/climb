@@ -1,3 +1,4 @@
+import React from "react";
 
 import summonerSpellLibrary from "../../assets/summoner.json";
 
@@ -20,16 +21,14 @@ const SummonerSpells = props => {
   const spell2 = fetchSpell(props.spell2);
 
   return (
-    <div>
-      <img
+    <React.Fragment>
+      <img className='w-5'
         src={summonerSpellImage(spell1)}
-        width='25px'
       />
-      <img
+      <img className='w-5'
         src={summonerSpellImage(spell2)}
-        width='25px'
       />
-    </div>
+    </React.Fragment>
   );
 };
 

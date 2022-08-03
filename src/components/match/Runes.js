@@ -52,24 +52,26 @@ const Runes = props => {
 
   return (
     <React.Fragment>
-      {primaryRuneArray.map(rune => {
-        return (
-          <img
-            key={rune.id}
-            src={runeImage(rune)}
-            width='25px'
-          />
-        );
-      })}
-      {secondaryRuneArray.map(rune => {
-        return (
-          <img
-            key={rune.id}
-            src={runeImage(rune)}
-            width='25px'
-          />
-        );
-      })}
+      <div className='flex flex-row'>
+        {primaryRuneArray.map(rune => {
+          return (
+            <img className='w-6'
+              key={rune.id}
+              src={runeImage(rune)}
+            />
+          );
+        })}
+      </div>
+      <div className='flex flex-row'>
+        {secondaryRuneArray.map(rune => {
+          return (
+            <img className='w-6'
+              key={rune.id}
+              src={runeImage(rune)}
+            />
+          );
+        })}
+      </div>
     </React.Fragment>
   );
 };

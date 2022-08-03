@@ -7,9 +7,8 @@ const Champion = props => {
   };
   const champion = championLibrary.data[props.name];
   return (
-    <img
+    <img className="w-12"
       src={championImage(props.name)}
-      width='50px'
     />
   );
 };
