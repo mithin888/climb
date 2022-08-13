@@ -3,9 +3,10 @@ import { useState } from 'react';
 import MatchList from "./MatchList";
 
 // backend config
-import myConfig from './../config/config';
+import myConfig from '../config/config';
 
-
+// layout
+import Button from './../layout/Button';
 
 
 const fetchPUUID = async (summonerName) => {
@@ -43,11 +44,11 @@ const SummonerName = () => {
   };
 
   return (
-    <div className='flex flex-col justify-items-center mt-10 m-auto'>
-      <input className='rounded-md bg-white w-100 outline-black w-96 m-auto'></input>
-      <button className='text-#5e5585 rounded-lg mt-3 py-0 m-auto w-20 bg-white' type='button' onClick={clickHandler}>Search
-      </button>
-      <div className='mt-4 max-w-2xl flex flex-col m-auto text-xs'>
+    <div className='flex flex-col items-center mt-10 m-auto'>
+      <input className='rounded-full w-96 outline-0 px-3 py-1 my-2'></input>
+      <Button
+        onClick={clickHandler}>Search</Button>
+      <div className='mt-4 flex flex-col m-auto text-xs'>
         <MatchList
           puuid={puuid}
           matches={matches} />

@@ -22,12 +22,14 @@ const SummonerSpells = props => {
 
   return (
     <React.Fragment>
-      <img className='w-5'
-        src={summonerSpellImage(spell1)}
-      />
-      <img className='w-5'
-        src={summonerSpellImage(spell2)}
-      />
+      <div className='my-px space-y-2'>
+        <img className='w-5'
+          src={summonerSpellImage(spell1)}
+        />
+        <img className='w-5'
+          src={summonerSpellImage(spell2)}
+        />
+      </div>
     </React.Fragment>
   );
 };

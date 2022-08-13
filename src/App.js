@@ -3,8 +3,6 @@ import React from 'react';
 // components
 import SummonerName from './components/SummonerName';
 
-// css
-import './App.css';
 
 
 

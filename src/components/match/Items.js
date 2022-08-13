@@ -8,33 +8,33 @@ const itemImage = item => {
 };
 
 const fillerImage = () => {
-  return `https://ddragon.leagueoflegends.com/cdn/img/bg/F5141416.png`;
+  return `https://ddragon.leagueoflegends.com/cdn/12.13.1/img/item/7050.png`;
 };
 
 
 const Items = props => {
 
   return (
-    <div>
-      {props.items.map(item => {
+    <div className='flex flex-row m-auto space-x-1 pt-2'>
+      {props.items.map((item, index) => {
         if (item === 0) {
           return (
             <img
-              key={item}
-              src="https://ddragon.leagueoflegends.com/cdn/img/bg/F5141416.png"
-              width='25px'
+              key={item + index}
+              src={fillerImage()}
+              width='30px'
             />
           );
         } else {
           return (
             <div
-              key={item}
+              key={item + index}
               className='p-0'
             >
               <img
                 key={item}
                 src={itemImage(item)}
-                width='25px'
+                width='30px'
               />
               {/* </OverlayTrigger> */}
             </div>
